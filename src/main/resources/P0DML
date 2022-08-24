@@ -1,0 +1,16 @@
+INSERT INTO suppliers(supplierID, name, contactName, phoneNumber, email) VALUES ('93746','DBs River Supplies','David B','8045734590"','dbRS@gmail.com');
+INSERT INTO suppliers(supplierID, name, contactName, phoneNumber, email) VALUES ('93076','Aquatic Toys','John Munz','8045793210','JMunz21@gmail.com');
+
+INSERT INTO products(productID, productName, price, description, inventory, supplierID) VALUES ('73732','Kayak',430.0,'Medium sized kayak',45,'93746');
+INSERT INTO products(productID, productName, price, description, inventory, supplierID) VALUES ('89032','Paddleboard',750.0,'Large paddleboard with paddle',25,'93076');
+INSERT INTO products(productID, productName, price, description, inventory, supplierID) VALUES('29034','Spare Paddle',50.0,'A medium sized paddle',75,'93746');
+INSERT INTO products(productID, productName, price, description, inventory, supplierID) VALUES('21670','Surf Board',550.0,'A large surf board',20,'93076');
+INSERT INTO products(productID, productName, price, description, inventory, supplierID) VALUES('34988','Inflatable pool',80.0,'A small inflatable pool',37,'93076');
+INSERT INTO products(productID, productName, price, description, inventory, supplierID) VALUES('34990','Life jacket',45.0,'Adjustable adult life jacket',79,'93746');
+INSERT INTO products(productID, productName, price, description, inventory, supplierID) VALUES('12988','Canoe',545.0,'A small 2 person canoe',13,'93076');
+INSERT INTO products(productID, productName, price, description, inventory, supplierID) VALUES('43988','Fishing pole',49.0,'A standard fishing pole',81,'93746');
+INSERT INTO products(productID, productName, price, description, inventory, supplierID) VALUES('40918','Water jetpack',14000.0,'A water jetpack for all ages',5,'93746');
+
+
+INSERT INTO accounts(accountID,username,password,privilege) VALUES ('85743','davidb123','revature88@',2);
+INSERT INTO accounts(accountID,username,password,privilege) VALUES ('50330','baoWow','revature99@',1);

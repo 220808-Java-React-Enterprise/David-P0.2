@@ -1,0 +1,71 @@
+drop table if exists suppliers cascade;
+drop table if exists products cascade;
+drop table if exists orders cascade;
+drop table if exists accounts cascade;
+drop table if exists accountInfo cascade;
+
+
+CREATE TABLE accounts(
+accountID varchar NOT NULL,
+username varchar NOT NULL,
+password varchar NOT NULL,
+privilege int NOT NULL,
+CONSTRAINT pk_accountID
+PRIMARY KEY(accountID));
+
+CREATE TABLE suppliers(
+supplierID varchar NOT NULL,
+name varchar NOT NULL,
+contactName varchar NOT NULL,
+phoneNumber varchar NOT NULL,
+email varchar NOT NULL,
+CONSTRAINT pk_supplierID
+PRIMARY KEY(supplierID));
+
+CREATE TABLE products(
+productID varchar NOT NULL,
+productName varchar NOT NULL,
+price decimal NOT NULL,
+description varchar NOT NULL,
+inventory int NOT NULL,
+supplierID varchar NOT NULL,
+CONSTRAINT pk_productID
+PRIMARY KEY(productID),
+CONSTRAINT fk_supplierID
+FOREIGN KEY(supplierID) REFERENCES suppliers(supplierID));
+
+
+
+CREATE TABLE orders (
+orderID varchar NOT NULL,
+accountID varchar NOT NULL,
+datePlaced varchar NOT NULL,
+expectedArrival varchar NOT NULL,
+pCost decimal not null,
+quantity int not null,
+productID varchar not null,
+CONSTRAINT pk_orderID
+PRIMARY KEY(orderID),
+CONSTRAINT fk_accountID
+FOREIGN KEY(accountID) REFERENCES accounts(accountID),
+constraint fk_prodID
+foreign key(productID) references products(productID));
+
+create table accountInfo(
+infoID varchar not null,
+name varchar not null,
+email varchar not null,
+phoneNumber varchar not null,
+address varchar not null,
+city varchar not null,
+state varchar not null,
+zip varchar not null,
+accountID varchar,
+constraint pk_infoID
+primary key (infoID),
+constraint fk_acID
+foreign key(accountID) references accounts(accountID));
+
+
+
+
